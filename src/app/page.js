@@ -64,8 +64,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-none w-2.5">
-          <div className="h-screen bg-[--background-secondary]">
+        <div className="flex-none w-0.5">
+          <div className="h-screen bg-gray-50">
           </div>
         </div>
 
@@ -91,30 +91,36 @@ export default function Home() {
         </div>
 
         <div className="flex-none w-screen">
-          <div className="flex flex-col justify-center items-center h-screen p-5">
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-1 justify-center items-center h-screen p-5">
+            <div className='w-[50%] h-[50%]'>
               <p>
                 Mes compétences en front-end incluent HTML, CSS, JavaScript, React, Next.js et Tailwind CSS. Pour le back-end, j'utilise Directus comme headless CMS et n8n pour les automatisations. Ces outils me permettent de réaliser des projets variés et de proposer des solutions complètes et efficaces.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl">
-              <div className="flex flex-col gap-4">
-                <p className="text-base text-[--foreground-secondary]">01.</p>
-                <h2 className="text-2xl font-bold">EXPÉRIENCE UTILISATEUR</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 h-[10%] gap-8">
+              <div className="flex flex-col gap-2">
+                <div className='flex justify-center items-center gap-4'>
+                  <p className="text-xs text-[--foreground-secondary]">01.</p>
+                  <h2 className="text-2xl font-bold">EXPÉRIENCE UTILISATEUR</h2>
+                </div>
                 <p>
                   Je m'engage à créer des interfaces intuitives et agréables, en mettant l'accent sur l'accessibilité et le design responsive pour offrir une expérience optimale sur tous les appareils.
                 </p>
               </div>
               <div className="flex flex-col gap-4">
-                <p className="text-base text-[--foreground-secondary]">02.</p>
-                <h2 className="text-2xl font-bold">SOLUTIONS SUR MESURE</h2>
+                <div className='flex justify-center items-center gap-4'>
+                  <p className="text-xs text-[--foreground-secondary]">02.</p>
+                  <h2 className="text-2xl font-bold">SOLUTIONS SUR MESURE</h2>
+                </div>
                 <p>
                   En associant Directus et n8n à mes compétences en front-end, je développe des solutions personnalisées qui automatisent les processus complexes et répondent précisément aux besoins spécifiques de chaque projet.
                 </p>
               </div>
               <div className="flex flex-col gap-4">
-                <p className="text-base text-[--foreground-secondary]">03.</p>
-                <h2 className="text-2xl font-bold">COLLABORATION ET PASSION</h2>
+                <div className='flex justify-center items-center gap-4'>
+                  <p className="text-xs text-[--foreground-secondary]">03.</p>
+                  <h2 className="text-2xl font-bold">COLLABORATION ET PASSION</h2>
+                </div>
                 <p>
                   Toujours enthousiaste à l'idée de travailler sur de nouveaux projets, j'aime collaborer avec d'autres professionnels pour concrétiser des idées innovantes et fournir des solutions de qualité.
                 </p>
@@ -123,8 +129,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex-none w-2.5">
-          <div className="h-screen bg-[--background-secondary]">
+        <div className="flex-none w-0.5">
+          <div className="h-screen bg-gray-50">
           </div>
         </div>
 
