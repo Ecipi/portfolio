@@ -25,7 +25,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   const horizontalScrollRef = useRef(null);
   const plugin = React.useRef(
-    Autoplay({ delay: 8000 })
+    Autoplay({ delay: 4000 })
   )
 
   useEffect(() => {
