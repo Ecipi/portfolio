@@ -25,7 +25,7 @@ gsap.registerPlugin(ScrollTrigger)
 export default function Home() {
   const horizontalScrollRef = useRef(null);
   const plugin = React.useRef(
-    Autoplay({ delay: 4000 })
+    Autoplay({ delay: 8000 })
   )
 
   useEffect(() => {
@@ -170,7 +170,7 @@ export default function Home() {
       className="w-full m-20 p-20 mt-5 pb-5 mb-5 "
     >
       <CarouselContent>
-        {Array.from({ length: 5 }).map((_, index) => (
+        {Array.from({ length: 8 }).map((_, index) => (
           <CarouselItem key={index}>
             <div className="p-1">
               <Card>
