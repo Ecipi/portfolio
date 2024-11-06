@@ -1,5 +1,6 @@
 'use client'
 
+import * as React from "react"
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { gsap } from 'gsap'
@@ -8,11 +9,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Footer from '@/components/Footer/footer'
 import Image from 'next/image'
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  CarouselApi
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export default function Home() {
   const horizontalScrollRef = useRef(null);
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000 })
+  )
 
   useEffect(() => {
     if (typeof window !== 'undefined' && horizontalScrollRef.current) {
@@ -142,17 +156,35 @@ export default function Home() {
         <div className="flex-none w-screen">
           <div className="flex justify-center items-center h-screen p-5 pr-0 relative">
                 <h2 className='text-7xl'>
-                  MES PROJETS PHARES
+                  MES PROJETS
                 </h2>
               </div>
         </div>
 
       </main>
 
-      <div className='flex gap-8 h-[100vh] '>
-        <h2 className='text-7xl'>
-          CARROUSEL COMING SOON
-        </h2>
+      <div className="flex justify-center items-center h-[100vh]  pr-0 relative">
+
+      <Carousel
+      plugins={[plugin.current]}
+      className="w-full m-20 p-20 mt-5 pb-5 mb-5 "
+    >
+      <CarouselContent>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <span className="text-4xl font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
       </div>
     </div>
   )
