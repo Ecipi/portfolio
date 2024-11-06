@@ -1,13 +1,13 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import Link from 'next/link'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Footer from '@/components/Footer/footer'
 import Image from 'next/image'
-
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -17,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     if (typeof window !== 'undefined' && horizontalScrollRef.current) {
       const horizontalScroll = horizontalScrollRef.current
-
+  
       gsap.to(horizontalScroll, {
         x: () => -(horizontalScroll.scrollWidth - window.innerWidth),
         ease: 'none',
@@ -34,7 +34,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="font-[family-name:var(--font-geist-sans)] ">
+    <div className="overflow-y-auto">
       <main className="horizontal-scroll flex" ref={horizontalScrollRef}>
         <div className="flex-none w-screen">
           <div className="flex justify-center items-center h-screen p-5">
@@ -70,7 +70,7 @@ export default function Home() {
         </div>
 
         <div className="flex-none w-screen">
-          <div className="flex justify-center items-center h-screen p-5 relative">
+          <div className="flex justify-center items-center h-screen p-5 pr-0 relative">
             <Footer />
             <div className='flex gap-8 h-[100vh] '>
               <div className='w-[60%] h-[100%] flex justify-start items-center'>
@@ -79,7 +79,7 @@ export default function Home() {
                 </h2>
               </div>
               <div className='relative w-[40%] h-[100%]'>
-                <Image src="/photo.avif" alt="Photo de Florian" layout="fill" className='object-cover' />
+                <Image src="/photo.avif" alt="Photo de Florian" fill className='object-cover' />
               </div>
             </div>
           </div>
@@ -92,36 +92,41 @@ export default function Home() {
 
         <div className="flex-none w-screen">
           <div className="grid grid-cols-1 md:grid-cols-1 justify-center items-center h-screen p-5">
-            <div className='w-[50%] h-[50%]'>
-              <p>
-                Mes compétences en front-end incluent HTML, CSS, JavaScript, React, Next.js et Tailwind CSS. Pour le back-end, j'utilise Directus comme headless CMS et n8n pour les automatisations. Ces outils me permettent de réaliser des projets variés et de proposer des solutions complètes et efficaces.
-              </p>
+            <div className='grid grid-cols-1 md:grid-cols-2'>
+              <div className='flex justify-end items-center'>
+                <p className='text-4xl'>
+                  Mes compétences en front-end incluent HTML, CSS, JavaScript, React, Next.js et Tailwind CSS. Pour le back-end, j'utilise Directus comme headless CMS et n8n pour les automatisations. Ces outils me permettent de réaliser des projets variés et de proposer des solutions complètes et efficaces.
+                </p>
+              </div>
+              <div className='flex -mt-20 mr-40 justify-end items-start'>
+                <Link href="/"><Image src="/logo.svg" alt="Logo de Florian" width={100} height={100} /></Link>
+              </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 h-[10%] gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 h-[10%] gap-4">
               <div className="flex flex-col gap-2">
-                <div className='flex justify-center items-center gap-4'>
+                <div className='flex justify-start items-center gap-2'>
                   <p className="text-xs text-[--foreground-secondary]">01.</p>
-                  <h2 className="text-2xl font-bold">EXPÉRIENCE UTILISATEUR</h2>
+                  <h2 className="text-3xl font-bold">EXPÉRIENCE UTILISATEUR</h2>
                 </div>
-                <p>
+                <p className='text-2xl'>
                   Je m'engage à créer des interfaces intuitives et agréables, en mettant l'accent sur l'accessibilité et le design responsive pour offrir une expérience optimale sur tous les appareils.
                 </p>
               </div>
-              <div className="flex flex-col gap-4">
-                <div className='flex justify-center items-center gap-4'>
+              <div className="flex flex-col gap-2">
+                <div className='flex justify-start items-center gap-2'>
                   <p className="text-xs text-[--foreground-secondary]">02.</p>
-                  <h2 className="text-2xl font-bold">SOLUTIONS SUR MESURE</h2>
+                  <h2 className="text-3xl font-bold">SOLUTIONS SUR MESURE</h2>
                 </div>
-                <p>
+                <p className='text-2xl'>
                   En associant Directus et n8n à mes compétences en front-end, je développe des solutions personnalisées qui automatisent les processus complexes et répondent précisément aux besoins spécifiques de chaque projet.
                 </p>
               </div>
-              <div className="flex flex-col gap-4">
-                <div className='flex justify-center items-center gap-4'>
+              <div className="flex flex-col gap-2">
+                <div className='flex justify-start items-center gap-2'>
                   <p className="text-xs text-[--foreground-secondary]">03.</p>
-                  <h2 className="text-2xl font-bold">COLLABORATION ET PASSION</h2>
+                  <h2 className="text-3xl font-bold">COLLABORATION</h2>
                 </div>
-                <p>
+                <p className='text-2xl'>
                   Toujours enthousiaste à l'idée de travailler sur de nouveaux projets, j'aime collaborer avec d'autres professionnels pour concrétiser des idées innovantes et fournir des solutions de qualité.
                 </p>
               </div>
@@ -135,11 +140,20 @@ export default function Home() {
         </div>
 
         <div className="flex-none w-screen">
-          <div className="flex flex-col justify-center items-center h-screen p-5">
-            <h2 className="text-4xl font-bold">MES PROJETS PHARES</h2>
-          </div>
+          <div className="flex justify-center items-center h-screen p-5 pr-0 relative">
+                <h2 className='text-7xl'>
+                  MES PROJETS PHARES
+                </h2>
+              </div>
         </div>
+
       </main>
+
+      <div className='flex gap-8 h-[100vh] '>
+        <h2 className='text-7xl'>
+          CARROUSEL COMING SOON
+        </h2>
+      </div>
     </div>
   )
 }

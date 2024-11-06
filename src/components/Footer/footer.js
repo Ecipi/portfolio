@@ -6,8 +6,8 @@ export default function Footer() {
       <div className="flex justify-between">
         <nav className="flex gap-4">
           <Link href="https://github.com/florianfrancese">GITHUB</Link>
-          <Link href="https://www.linkedin.com/in/florianfrancese/">LINKEDIN</Link>
           <Link href="https://x.com/florianfrancese">X</Link>
+          <Link href="https://www.linkedin.com/in/florianfrancese/">LINKEDIN</Link>
         </nav>
       </div>
     </div>
