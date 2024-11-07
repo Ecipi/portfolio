@@ -118,8 +118,8 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 h-[10%] gap-4">
               <div className="flex flex-col gap-2">
-                <div className='flex justify-start items-center gap-2'>
-                  <p className="text-xs text-[--foreground-secondary]">01.</p>
+              <div className='flex justify-start items-end gap-2'>
+              <p className="text-xs text-[--foreground-secondary] pb-1">01.</p>
                   <h2 className="text-3xl font-bold">EXPÉRIENCE UTILISATEUR</h2>
                 </div>
                 <p className='text-2xl'>
@@ -127,8 +127,8 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <div className='flex justify-start items-center gap-2'>
-                  <p className="text-xs text-[--foreground-secondary]">02.</p>
+              <div className='flex justify-start items-end gap-2'>
+              <p className="text-xs text-[--foreground-secondary] pb-1">02.</p>
                   <h2 className="text-3xl font-bold">SOLUTIONS SUR MESURE</h2>
                 </div>
                 <p className='text-2xl'>
@@ -136,8 +136,8 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-col gap-2">
-                <div className='flex justify-start items-center gap-2'>
-                  <p className="text-xs text-[--foreground-secondary]">03.</p>
+                <div className='flex justify-start items-end gap-2'>
+                  <p className="text-xs text-[--foreground-secondary] pb-1">03.</p>
                   <h2 className="text-3xl font-bold">COLLABORATION</h2>
                 </div>
                 <p className='text-2xl'>
