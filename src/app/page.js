@@ -263,48 +263,49 @@ export default function Home() {
 
     <div className="flex-none w-screen" id="projects">
       <div className="relative w-full h-screen">
-        <Carousel
-          className="w-full h-full"
-          opts={{
-            align: "center",
-            loop: true,
-          }}
-        >
-          <CarouselContent>
-            {carouselItems.length > 0 ? (
-              carouselItems.map((item) => (
-                <CarouselItem key={item.id} className="basis-full">
-                  <div className="relative w-full h-screen">
-                    <Image
-                      src={`https://directus.ecipi.online/assets/${item.image}`}
-                      alt={item.alt}
-                      fill
-                      className="object-cover"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                      <h3 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-                        {item.titre}
-                      </h3>
-                      <p className="text-xl md:text-2xl text-gray-200 font-medium max-w-3xl">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </CarouselItem>
-              ))
-            ) : (
-              <CarouselItem>
-                <div className="flex items-center justify-center h-screen">
-                  <p className="text-center text-gray-500">Aucun élément à afficher.</p>
+      <Carousel
+      plugins={[plugin.current]}
+      className="m-20 p-20 mt-5 pb-5 mb-5 relative"
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+    >
+      <CarouselContent>
+        {carouselItems.length > 0 ? (
+          carouselItems.map((item) => (
+            <CarouselItem key={item.id} className="basis-full">
+              <div className="relative w-full h-[90vh] overflow-hidden rounded-lg shadow-xl">
+                <Image
+                  src={`https://directus.ecipi.online/assets/${item.image}`}
+                  alt={item.alt}
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12 backdrop-blur-md bg-black/30 transition-all duration-300 ease-in-out">
+                  <h3 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+                    {item.titre}
+                  </h3>
+                  <p className="text-xl md:text-2xl text-gray-200 font-medium max-w-3xl leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
-              </CarouselItem>
-            )}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-8 top-1/2 -translate-y-1/2 h-12 w-12" />
-          <CarouselNext className="absolute right-8 top-1/2 -translate-y-1/2 h-12 w-12" />
-        </Carousel>
+              </div>
+            </CarouselItem>
+          ))
+        ) : (
+          <CarouselItem>
+            <div className="flex items-center justify-center h-[90vh]">
+              <p className="text-center text-gray-500 text-xl">Aucun élément à afficher.</p>
+            </div>
+          </CarouselItem>
+        )}
+      </CarouselContent>
+      <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 h-12 w-12 bg-white/10 hover:bg-white/20 transition-all duration-300 ease-in-out" />
+      <CarouselNext className="absolute top-1/2 -translate-y-1/2 h-12 w-12 bg-white/10 hover:bg-white/20 transition-all duration-300 ease-in-out" />
+    </Carousel>
       </div>
 </div>
 
